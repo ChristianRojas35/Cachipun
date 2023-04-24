@@ -15,6 +15,8 @@ for(let i = 0 ; i < cantidadJuegos ; i++) { //estructura del for
     console.log("Ciclo: " + i);
     opcionUsuario = prompt("Ingresa tu jugada: Piedra, Papel o Tijeras");
     console.log("opcionUsuario desde el prompt: " + opcionUsuario);
+    //Switch que asigna un entero a la opción seleccionada por el usuario
+    // para comparar con esta opción con la de la computadora y definir al ganador. 
     switch (opcionUsuario.toLocaleLowerCase()) {
         case "piedra":
             jugadaUsuario = 0;
@@ -22,6 +24,7 @@ for(let i = 0 ; i < cantidadJuegos ; i++) { //estructura del for
         case  "papel":
             jugadaUsuario = 1;
             break;
+        //Doble case para el caso de que el jugador escoja singular o plural.
         case "tijera": 
         case "tijeras":
             jugadaUsuario = 2;
@@ -31,8 +34,10 @@ for(let i = 0 ; i < cantidadJuegos ; i++) { //estructura del for
             break;
     }
 
-    jugadaComputadora = Math.floor(Math.random()*3);
+    jugadaComputadora = Math.floor(Math.random()*3); // Random de la computadora.
 
+    //Switch para asignar un string (Piedra, Papel, Tijera) al número random de la computadora
+    //Con el fin de poder imprimir esta opción en el Alert.
     switch (jugadaComputadora)
     {
         case 0:
@@ -46,10 +51,11 @@ for(let i = 0 ; i < cantidadJuegos ; i++) { //estructura del for
             break;
 
     }
-
+    //Validación para identificar una opción invalida.
     if(jugadaUsuario === 3) {
         alert("Opcion ingresada invalida");
     }
+    //Opción Empate
     else if((jugadaComputadora == 0 && jugadaUsuario == 0) || (jugadaComputadora == 1 && jugadaUsuario == 1) || (jugadaComputadora == 2 && jugadaUsuario == 2))
     {
         console.log("opcionComputadora: " + opcionComputadora);
@@ -80,6 +86,8 @@ for(let i = 0 ; i < cantidadJuegos ; i++) { //estructura del for
 
 console.log("jugadasGanadasUsuario: " + jugadasGanadasUsuario);
 console.log("jugadaComputadora: " + jugadaComputadora);
+
+//Validaciones para entregar feedback final de la partida.
 
 if(jugadasGanadasUsuario > jugadasGanadasComputadora) {
     alert("El usuario ha ganado la partida");
