@@ -3,15 +3,15 @@ let cantidadJuegos; //define el numero de juegos por partida.
 let opcionUsuario; //define la elección del usuario (Piedra, Papel, Tijera) en formato texto.
 let opcionComputadora;//define la opción random de la computadora.
 let jugadaUsuario;//define la elección del usuario convertida a entero.
-let jugadaComputadora;
+let jugadaComputadora;//define el valor random de la computadora asignado al string correspondiente.
 
-let jugadasGanadasUsuario;//define 
-let jugadasGanadasComputadora;
+let jugadasGanadasUsuario = 0;//define la cantidad de juegos que ha ganado el usuario 
+let jugadasGanadasComputadora = 0;//define la cantidad de juegos que ha ganado la computadora
 
 
-cantidadJuegos = parseInt(prompt("Ingresa cantidad de partidas"));
+cantidadJuegos = parseInt(prompt("Ingresa cantidad de partidas"));//define la cantidad de veces que se repetira la iteración
 
-for(let i = 0 ; i < cantidadJuegos ; i++) {
+for(let i = 0 ; i < cantidadJuegos ; i++) { //estructura del for
     console.log("Ciclo: " + i);
     opcionUsuario = prompt("Ingresa tu jugada: Piedra, Papel o Tijeras");
     console.log("opcionUsuario desde el prompt: " + opcionUsuario);
@@ -22,10 +22,11 @@ for(let i = 0 ; i < cantidadJuegos ; i++) {
         case  "papel":
             jugadaUsuario = 1;
             break;
-        case "tijera", "tijeras":
+        case "tijera": 
+        case "tijeras":
             jugadaUsuario = 2;
             break;
-        case "lunes":
+        default:
             jugadaUsuario = 3;
             break;
     }
@@ -53,7 +54,7 @@ for(let i = 0 ; i < cantidadJuegos ; i++) {
     {
         console.log("opcionComputadora: " + opcionComputadora);
         console.log("opcionUsuario: " + opcionUsuario);
-        alert("Este juego es un empate");
+        alert("Este juego es un EMPATE, Has escogido: " + opcionUsuario + " y la computadora ha escogido: " + opcionComputadora);
     }
     //Computadora gana
     else if((jugadaComputadora == 0 && jugadaUsuario == 2) ||
@@ -63,7 +64,7 @@ for(let i = 0 ; i < cantidadJuegos ; i++) {
         console.log("opcionComputadora: " + opcionComputadora);
         console.log("opcionUsuario: " + opcionUsuario);
         jugadasGanadasComputadora ++;
-        alert("Este juego lo ha ganado la computadora");
+        alert("Este juego lo ha ganado la COMPUTADORA, , Has escogido: " + opcionUsuario + " y la computadora ha escogido: " + opcionComputadora);
      }
      //Usuario gana
      else if((jugadaComputadora == 0 && jugadaUsuario == 1) ||
@@ -73,9 +74,12 @@ for(let i = 0 ; i < cantidadJuegos ; i++) {
         console.log("opcionComputadora: " + opcionComputadora);
         console.log("opcionUsuario: " + opcionUsuario);
         jugadasGanadasUsuario ++;
-        alert("Este juego lo ha ganado el usuario");
+        alert("Este juego lo ha ganado el USUARIO, , Has escogido: " + opcionUsuario + " y la computadora ha escogido: " + opcionComputadora);
      }
 }
+
+console.log("jugadasGanadasUsuario: " + jugadasGanadasUsuario);
+console.log("jugadaComputadora: " + jugadaComputadora);
 
 if(jugadasGanadasUsuario > jugadasGanadasComputadora) {
     alert("El usuario ha ganado la partida");
@@ -83,9 +87,11 @@ if(jugadasGanadasUsuario > jugadasGanadasComputadora) {
 else if (jugadasGanadasUsuario < jugadasGanadasComputadora) {
     alert("La computadora ha ganado la partida HAHA");
 }
-else if (jugadasGanadasUsuario == jugadasGanadasComputadora) {
+else if (jugadasGanadasUsuario == jugadasGanadasComputadora  && typeof(jugadaComputadora) == "number" && typeof(jugadaUsuario) == "number") {
     alert("Esta partida ha sido un empate u.u");
 }
 else  {
-    console.log("jugadaUsuario: " + jugadaUsuario);
+    console.log("type jugadaComputadora: " + typeof(jugadaComputadora));
+    console.log("type jugadaUsuario: " + typeof(jugadaUsuario));
+    alert("Has ingresado un valor invalido, sigue las instrucciones");
 }
