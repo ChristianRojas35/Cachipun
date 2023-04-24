@@ -90,16 +90,16 @@ console.log("jugadaComputadora: " + jugadaComputadora);
 //Validaciones para entregar feedback final de la partida.
 
 if(jugadasGanadasUsuario > jugadasGanadasComputadora) {
-    alert("El usuario ha ganado la partida");
+    alert("Usuario:  " + jugadasGanadasUsuario + " - Computadora: " + jugadasGanadasComputadora + " El usuario ha ganado la partida.");
 }
 else if (jugadasGanadasUsuario < jugadasGanadasComputadora) {
-    alert("La computadora ha ganado la partida HAHA");
+    alert("Computadora:  " + jugadasGanadasComputadora + " - Usuario: " + jugadasGanadasUsuario + " La computadora ha ganado la partida.");
 }
-else if (jugadasGanadasUsuario == jugadasGanadasComputadora  && typeof(jugadaComputadora) == "number" && typeof(jugadaUsuario) == "number") {
-    alert("Esta partida ha sido un empate u.u");
+else if (jugadasGanadasUsuario === jugadasGanadasComputadora  && typeof(jugadasGanadasComputadora) == "number" && typeof(jugadasGanadasUsuario) == "number") {
+    alert("Usuario:  " + jugadasGanadasUsuario + " - Computadora: " + jugadasGanadasComputadora + " Esta partida ha sido un empate u.u");
 }
 else  {
-    console.log("type jugadaComputadora: " + typeof(jugadaComputadora));
-    console.log("type jugadaUsuario: " + typeof(jugadaUsuario));
+    console.log("type jugadaComputadora: " + typeof(jsugadasGanadasComputadora));
+    console.log("type jugadaUsuario: " + typeof(jugadasGanadasUsuario));
     alert("Has ingresado un valor invalido, sigue las instrucciones");
 }
