@@ -95,7 +95,7 @@ if(jugadasGanadasUsuario > jugadasGanadasComputadora) {
 else if (jugadasGanadasUsuario < jugadasGanadasComputadora) {
     alert("Computadora:  " + jugadasGanadasComputadora + " - Usuario: " + jugadasGanadasUsuario + " La computadora ha ganado la partida.");
 }
-else if (jugadasGanadasUsuario === jugadasGanadasComputadora  && typeof(jugadasGanadasComputadora) == "number" && typeof(jugadasGanadasUsuario) == "number") {
+else if (jugadasGanadasUsuario === jugadasGanadasComputadora  && typeof(cantidadJuegos) == "number") {
     alert("Usuario:  " + jugadasGanadasUsuario + " - Computadora: " + jugadasGanadasComputadora + " Esta partida ha sido un empate u.u");
 }
 else  {
