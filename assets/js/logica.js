@@ -9,11 +9,11 @@ let jugadasGanadasUsuario = 0;//define la cantidad de juegos que ha ganado el us
 let jugadasGanadasComputadora = 0;//define la cantidad de juegos que ha ganado la computadora
 
 
-cantidadJuegos = parseInt(prompt("Ingresa cantidad de partidas"));//define la cantidad de veces que se repetira la iteración
+cantidadJuegos = parseInt(prompt("Ingresa cantidad de juegos"));//define la cantidad de veces que se repetira la iteración
 
 for(let i = 0 ; i < cantidadJuegos ; i++) { //estructura del for
     console.log("Ciclo: " + i);
-    opcionUsuario = prompt("Ingresa tu jugada: Piedra, Papel o Tijeras");
+    opcionUsuario = prompt("Ingresa tu jugada: (Piedra), (Papel) o (Tijeras)");
     console.log("opcionUsuario desde el prompt: " + opcionUsuario);
     //Switch que asigna un entero a la opción seleccionada por el usuario
     // para comparar con esta opción con la de la computadora y definir al ganador. 
@@ -96,6 +96,7 @@ else if (jugadasGanadasUsuario < jugadasGanadasComputadora) {
     alert("Computadora:  " + jugadasGanadasComputadora + " - Usuario: " + jugadasGanadasUsuario + " La computadora ha ganado la partida.");
 }
 else if (jugadasGanadasUsuario === jugadasGanadasComputadora  && typeof(cantidadJuegos) == "number") {
+    console.log("tipo cantidad de jugadas: " + typeof(cantidadJuegos));
     alert("Usuario:  " + jugadasGanadasUsuario + " - Computadora: " + jugadasGanadasComputadora + " Esta partida ha sido un empate u.u");
 }
 else  {
